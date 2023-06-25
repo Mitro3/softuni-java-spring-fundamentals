@@ -14,12 +14,16 @@ public class UserEntity extends BaseEntity {
 
     private String password;
 
+    @Column(name = "first_name")
     private String firstName;
 
+    @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "is_active")
     private boolean isActive;
 
+    @Column(name = "image_url")
     private String imageUrl;
 
     @ManyToMany(fetch = FetchType.EAGER)
