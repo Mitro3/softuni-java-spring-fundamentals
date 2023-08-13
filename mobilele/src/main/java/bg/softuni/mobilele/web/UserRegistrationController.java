@@ -1,6 +1,9 @@
 package bg.softuni.mobilele.web;
 
-import bg.softuni.mobilele.dtos.UserRegisterDTO;
+import bg.softuni.mobilele.model.dtos.UserRegisterDTO;
+import bg.softuni.mobilele.model.entities.UserEntity;
+import bg.softuni.mobilele.model.mapper.UserMapper;
+import bg.softuni.mobilele.repositories.UserRepository;
 import bg.softuni.mobilele.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -18,8 +21,18 @@ public class UserRegistrationController {
 
     private final UserService userService;
 
-    public UserRegistrationController(UserService userService) {
+    private UserMapper userMapper;
+    private UserRepository userRepostiory;
+
+    public UserRegistrationController(UserService userService, UserMapper userMapper, UserRepository userRepostiory) {
         this.userService = userService;
+        this.userMapper = userMapper;
+        this.userRepostiory = userRepostiory;
+    }
+
+    public void registerAndLogin(UserRegisterDTO registerDTO) {
+        UserEntity newUser = userMapper.userDtoToUserEntity(registerDTO);
+        this.userRepostiory.save(newUser);
     }
 
     @ModelAttribute("userModel")
@@ -40,11 +53,11 @@ public class UserRegistrationController {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("userModel", userModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userModel", bindingResult);
-
             return "redirect:/users/register";
         }
 
-        userService.registerAndLogin(userModel);
+        this.userService.registerAndLogin(userModel);
+
         return "redirect:/";
     }
 }

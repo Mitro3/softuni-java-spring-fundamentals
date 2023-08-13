@@ -1,8 +1,8 @@
 package bg.softuni.mobilele.services;
 
-import bg.softuni.mobilele.dtos.UserLoginDTO;
-import bg.softuni.mobilele.dtos.UserRegisterDTO;
-import bg.softuni.mobilele.entities.UserEntity;
+import bg.softuni.mobilele.model.dtos.UserLoginDTO;
+import bg.softuni.mobilele.model.dtos.UserRegisterDTO;
+import bg.softuni.mobilele.model.entities.UserEntity;
 import bg.softuni.mobilele.repositories.UserRepository;
 import bg.softuni.mobilele.user.CurrentUser;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.dtos;
+package bg.softuni.mobilele.model.dtos;
 
 public class UserLoginDTO {
 
