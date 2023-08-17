@@ -1,8 +1,7 @@
 package bg.softuni.mobilele.web;
 
-import bg.softuni.mobilele.model.dtos.UserRegisterDTO;
-import bg.softuni.mobilele.model.entities.UserEntity;
-import bg.softuni.mobilele.model.mapper.UserMapper;
+import bg.softuni.mobilele.models.dtos.UserRegisterDTO;
+import bg.softuni.mobilele.models.mappers.UserMapper;
 import bg.softuni.mobilele.repositories.UserRepository;
 import bg.softuni.mobilele.services.UserService;
 import jakarta.validation.Valid;
@@ -24,16 +23,16 @@ public class UserRegistrationController {
     private UserMapper userMapper;
     private UserRepository userRepostiory;
 
-    public UserRegistrationController(UserService userService, UserMapper userMapper, UserRepository userRepostiory) {
+    public UserRegistrationController(UserService userService, UserRepository userRepostiory) {
         this.userService = userService;
         this.userMapper = userMapper;
         this.userRepostiory = userRepostiory;
     }
 
-    public void registerAndLogin(UserRegisterDTO registerDTO) {
-        UserEntity newUser = userMapper.userDtoToUserEntity(registerDTO);
-        this.userRepostiory.save(newUser);
-    }
+//    public void registerAndLogin(UserRegisterDTO registerDTO) {
+//        UserEntity newUser = userMapper.userDtoToUserEntity(registerDTO);
+//        this.userRepostiory.save(newUser);
+//    }
 
     @ModelAttribute("userModel")
     public void initUserModel(Model model) {

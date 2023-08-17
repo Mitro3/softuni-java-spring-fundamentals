@@ -1,7 +1,7 @@
-package bg.softuni.mobilele.model.entities;
+package bg.softuni.mobilele.models.entities;
 
-import bg.softuni.mobilele.model.entities.enums.EngineEnum;
-import bg.softuni.mobilele.model.entities.enums.TransmissionEnum;
+import bg.softuni.mobilele.models.enums.EngineEnum;
+import bg.softuni.mobilele.models.enums.TransmissionEnum;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import org.hibernate.annotations.*;

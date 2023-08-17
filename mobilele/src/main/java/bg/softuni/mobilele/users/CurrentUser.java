@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.user;
+package bg.softuni.mobilele.users;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;

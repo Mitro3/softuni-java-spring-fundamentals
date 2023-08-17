@@ -1,6 +1,6 @@
-package bg.softuni.mobilele.model.entities;
+package bg.softuni.mobilele.models.entities;
 
-import bg.softuni.mobilele.model.entities.enums.CategoryEnum;
+import bg.softuni.mobilele.models.enums.CategoryEnum;
 import jakarta.persistence.*;
 
 @Entity

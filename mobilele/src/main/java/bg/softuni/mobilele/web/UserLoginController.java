@@ -1,5 +1,5 @@
 package bg.softuni.mobilele.web;
-import bg.softuni.mobilele.model.dtos.UserLoginDTO;
+import bg.softuni.mobilele.models.dtos.UserLoginDTO;
 import bg.softuni.mobilele.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

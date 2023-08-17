@@ -1,10 +1,10 @@
 package bg.softuni.mobilele.services;
 
-import bg.softuni.mobilele.model.dtos.UserLoginDTO;
-import bg.softuni.mobilele.model.dtos.UserRegisterDTO;
-import bg.softuni.mobilele.model.entities.UserEntity;
+import bg.softuni.mobilele.models.dtos.UserLoginDTO;
+import bg.softuni.mobilele.models.dtos.UserRegisterDTO;
+import bg.softuni.mobilele.models.entities.UserEntity;
 import bg.softuni.mobilele.repositories.UserRepository;
-import bg.softuni.mobilele.user.CurrentUser;
+import bg.softuni.mobilele.users.CurrentUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -23,6 +23,7 @@ public class UserService {
     public UserService(UserRepository userRepository, CurrentUser currentUser) {
         this.userRepository = userRepository;
         this.currentUser = currentUser;
+
     }
 
     public void registerAndLogin(UserRegisterDTO userRegisterDTO) {
@@ -35,7 +36,7 @@ public class UserService {
         newUser.setLastName(userRegisterDTO.getLastName());
         newUser.setPassword(userRegisterDTO.getPassword());
 
-        userRepository.save(newUser);
+        this.userRepository.save(newUser);
 
         login(newUser);
     }

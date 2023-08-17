@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.model.validator;
+package bg.softuni.mobilele.models.validators;
 
 import bg.softuni.mobilele.repositories.UserRepository;
 import jakarta.validation.ConstraintValidator;

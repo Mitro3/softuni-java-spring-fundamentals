@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.config;
+package bg.softuni.mobilele.configs;
 
 import org.springframework.context.annotation.Configuration;
 

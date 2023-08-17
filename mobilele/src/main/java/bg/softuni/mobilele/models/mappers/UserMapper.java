@@ -1,7 +1,7 @@
-package bg.softuni.mobilele.model.mapper;
+package bg.softuni.mobilele.models.mappers;
 
-import bg.softuni.mobilele.model.dtos.UserRegisterDTO;
-import bg.softuni.mobilele.model.entities.UserEntity;
+import bg.softuni.mobilele.models.dtos.UserRegisterDTO;
+import bg.softuni.mobilele.models.entities.UserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

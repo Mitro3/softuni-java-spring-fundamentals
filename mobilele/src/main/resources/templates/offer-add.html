@@ -13,13 +13,13 @@
 
 <body>
 
-<div th:replace="fragments/navbar">Navbar
-</div>
-
+<div th:replace="fragments/navbar">Navbar</div>
 
 <div class="container">
     <h2 class="text-center text-white">Upload Offer</h2>
-    <form method="POST" 
+    <form th:action="@{/offers/add}"
+            th:method="POST"
+          th:object="${addOfferModel}"
           class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="row">
 
@@ -47,7 +47,11 @@
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
-                <select id="engine" class="form-control">
+                <select
+                        id="engine"
+                        name="engine"
+                        th:errorclass="is-invalid"
+                        class="form-control">
                     <option value="">- Select engine type -</option>
                     <option>
                         Engine type
