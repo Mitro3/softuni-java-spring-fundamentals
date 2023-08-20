@@ -1,7 +1,6 @@
 package bg.softuni.mobilele.web;
 
 import bg.softuni.mobilele.models.dtos.UserRegisterDTO;
-import bg.softuni.mobilele.models.mappers.UserMapper;
 import bg.softuni.mobilele.repositories.UserRepository;
 import bg.softuni.mobilele.services.UserService;
 import jakarta.validation.Valid;
@@ -20,12 +19,10 @@ public class UserRegistrationController {
 
     private final UserService userService;
 
-    private UserMapper userMapper;
     private UserRepository userRepostiory;
 
     public UserRegistrationController(UserService userService, UserRepository userRepostiory) {
         this.userService = userService;
-        this.userMapper = userMapper;
         this.userRepostiory = userRepostiory;
     }
 

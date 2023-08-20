@@ -11,6 +11,8 @@ public class CurrentUser {
 
     private boolean loggedIn;
 
+    private String email;
+
     public String getName() {
         return name;
     }
@@ -32,7 +34,16 @@ public class CurrentUser {
     }
 
     public void clear() {
+        email = null;
         loggedIn = false;
         name = null;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
